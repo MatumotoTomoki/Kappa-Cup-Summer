@@ -4,11 +4,10 @@
 #include "Player.h"
 #include"sound/SoundEngine.h"
 #include "Water.h"
+#include "UI.h"
 
 bool Game::Start()
 {
-	
-
 
 
 	m_stageLevelRnder.Init("Assets/modelData/Stage2.tkl", [&](LevelObjectData& odData)
@@ -25,6 +24,7 @@ bool Game::Start()
 				x.x += 100.0f;
 				x.y += 100.0f;
 				g_camera3D->SetPosition(x);
+				m_ui = NewGO<UI>(0, "ui");
 				g_soundEngine->ResistWaveFileBank(0, "Assets/Sound/fish.wav");
 				m_gameBGM = NewGO<SoundSource>(0);
 				m_gameBGM->Init(0);

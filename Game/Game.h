@@ -4,7 +4,7 @@
 
 class GameCamera;
 class Player;
-class a;
+class UI;
 class Game : public IGameObject
 {
 public:
@@ -20,7 +20,7 @@ private:
 	LevelRender m_stageLevelRnder;
 	SkyCube* m_skyCube;
 	SoundSource* m_gameBGM = nullptr;
-	a* m_a;
+	UI* m_ui;
 	int m_skyCubeType = enSkyCubeType_Day;
 	
 };
