@@ -2,7 +2,7 @@
 #include "Game.h"
 #include "GameCamera.h"
 #include "Player.h"
-
+#include"sound/SoundEngine.h"
 #include "Water.h"
 
 bool Game::Start()
@@ -25,6 +25,10 @@ bool Game::Start()
 				x.x += 100.0f;
 				x.y += 100.0f;
 				g_camera3D->SetPosition(x);
+				g_soundEngine->ResistWaveFileBank(0, "Assets/Sound/fish.wav");
+				m_gameBGM = NewGO<SoundSource>(0);
+				m_gameBGM->Init(0);
+				m_gameBGM->Play(true);
 
 				return true;
 			}
@@ -40,7 +44,8 @@ bool Game::Start()
 				m_stageRender.Update();*/
 				return true;
 			}
-			return false;
+
+			
 		});
 	//PhysicsWorld::GetInstance()->EnableDrawDebugWireFrame();
 	
