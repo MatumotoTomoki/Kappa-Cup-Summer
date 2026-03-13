@@ -1,6 +1,6 @@
 ﻿#pragma once
 class Player;
-class Pengin : public IGameObject
+class NinjaPengin:public IGameObject
 {
 public:
 	bool Start();
@@ -18,6 +18,7 @@ public:
 	Quaternion m_rot;
 	Player* m_player;
 	ModelRender m_modelRender;
-	
+	bool m_stealth = true;
+
 };
 
