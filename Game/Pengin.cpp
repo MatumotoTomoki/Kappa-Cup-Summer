@@ -3,6 +3,7 @@
 #include "Player.h"
 
 bool Pengin::Start() {
+	m_characterController.Init(25.0f, 75.0f, m_pos);
 	m_animationClips[enAnimClip_Walk].Load("Assets/animData/pengin_walk.tka");
 	m_animationClips[enAnimClip_Walk].SetLoopFlag(true);
 	m_animationClips[enAnimClip_Chase].Load("Assets/animData/pengin_chase.tka");
@@ -25,12 +26,13 @@ void Pengin::Update() {
 
 	Vector3 diff = m_player->m_position - m_pos;
 	if (diff.Length() <= 1000.0f and m_player->m_swim == false) {
+		m_modelRender.PlayAnimation(enAnimClip_Chase);
 		float distToPlayer = diff.Length();
 
 		Vector3 toPlayerDir = diff;
 		toPlayerDir.Normalize();
 
-		m_pos += toPlayerDir * 5.0f;
+		m_pos += toPlayerDir * 8.0f;
 
 		float angleY = atan2f(toPlayerDir.x, toPlayerDir.z);
 
@@ -51,6 +53,7 @@ void Pengin::Update() {
 		m_rot.SetRotationY(-angleY);
 	}
 	else {
+		m_modelRender.PlayAnimation(enAnimClip_Walk);
 		m_rot.SetRotationDegY(180.0f);
 	}
 

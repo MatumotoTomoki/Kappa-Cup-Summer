@@ -22,6 +22,10 @@ bool Player::Start() {
 }
 
 void Player::Update() {
+	m_o2 += 0.001f;
+	if (m_o2 > -0.1f) {
+		m_o2 = -0.1f;
+	}
 	m_velocity.x = 0.0f;
 	m_velocity.z = 0.0f;
 	if (m_characterController.IsOnGround() == false) {

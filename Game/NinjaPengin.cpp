@@ -3,12 +3,13 @@
 #include "Player.h"
 
 bool NinjaPengin::Start() {
+	m_characterController.Init(25.0f, 75.0f, m_pos);
 	m_animationClips[enAnimClip_Walk].Load("Assets/animData/pengin_walk.tka");
 	m_animationClips[enAnimClip_Walk].SetLoopFlag(true);
 	m_animationClips[enAnimClip_Chase].Load("Assets/animData/pengin_chase.tka");
 	m_animationClips[enAnimClip_Chase].SetLoopFlag(false);
 	m_modelRender.Init("Assets/modelData/pengin.tkm", m_animationClips, enAnimClip_Num, enModelUpAxisZ);
-	m_pos = { 0.0f,0.0f,500.0f };
+	m_pos = { 0.0f,0.0f,1000.0f };
 	m_modelRender.SetScale(10.0f, 10.0f, 10.0f);
 	m_modelRender.SetRotation(m_rot);
 	m_modelRender.SetPosition(m_pos);
@@ -31,7 +32,7 @@ void NinjaPengin::Update() {
 		Vector3 toPlayerDir = diff;
 		toPlayerDir.Normalize();
 
-		m_pos += toPlayerDir * 5.0f;
+		m_pos += toPlayerDir * 8.0f;
 
 		float angleY = atan2f(toPlayerDir.x, toPlayerDir.z);
 
