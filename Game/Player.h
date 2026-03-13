@@ -22,6 +22,8 @@ public:
 	AnimationClip m_animationClips[enAnimClip_Num];
 	bool m_swim = false;
 	bool m_waterJump = false;
+	float m_hp = -1.05f;
+	float m_o2 = -1.05f;
 	FontRender m_font;
 	Pengin* m_pengin;
 };

@@ -18,6 +18,7 @@ public:
 	Quaternion m_rot;
 	Player* m_player;
 	ModelRender m_modelRender;
+	CharacterController m_characterController;
 	
 };
 

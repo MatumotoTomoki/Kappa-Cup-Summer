@@ -1,15 +1,13 @@
 ﻿#pragma once
 class Player;
-class NinjaPengin:public IGameObject
+class SilenPengin : public IGameObject
 {
-public:
 	bool Start();
 	void Update();
 	void Render(RenderContext& rc);
 
 	Vector3 m_pos;
 	enum EnPenginAnimationClip {
-		enAnimClip_Walk,
 		enAnimClip_Chase,
 		enAnimClip_Num,
 	};
@@ -18,8 +16,7 @@ public:
 	Quaternion m_rot;
 	Player* m_player;
 	ModelRender m_modelRender;
-	CharacterController m_characterController;
-	bool m_stealth = true;
-
+	float m_coolTime = 100.0f;
+	int m_silen = 0;
 };
 
