@@ -6,11 +6,10 @@
 #include "Water.h"
 #include "UI.h"
 #include "Pengin.h"
+#include "NinjaPengin.h"
 
 bool Game::Start()
 {
-
-
 	m_stageLevelRnder.Init("Assets/modelData/Stage2.tkl", [&](LevelObjectData& odData)
 		{
 			if (odData.EqualObjectName(L"fish") == true)
@@ -24,7 +23,8 @@ bool Game::Start()
 				m_player = NewGO<Player>(0, "Player");
 				m_gameCamera = NewGO<GameCamera>(0, "GameCamera");
 				m_ui = NewGO<UI>(0, "ui");
-				m_pengin = NewGO<Pengin>(0, "Pengin");
+				//m_pengin = NewGO<Pengin>(0, "Pengin");
+				m_ninjaPengin = NewGO<NinjaPengin>(0, "NinjaPengin");
 				g_soundEngine->ResistWaveFileBank(0, "Assets/Sound/fish.wav");
 				m_gameBGM = NewGO<SoundSource>(0);
 				m_gameBGM->Init(0);

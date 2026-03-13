@@ -17,6 +17,7 @@
     <ClCompile Include="Water.cpp" />
     <ClCompile Include="UI.cpp" />
     <ClCompile Include="Pengin.cpp" />
+    <ClCompile Include="NinjaPengin.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
@@ -29,5 +30,6 @@
     <ClInclude Include="Water.h" />
     <ClInclude Include="UI.h" />
     <ClInclude Include="Pengin.h" />
+    <ClInclude Include="NinjaPengin.h" />
   </ItemGroup>
 </Project>

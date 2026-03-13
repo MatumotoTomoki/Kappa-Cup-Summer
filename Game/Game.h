@@ -6,6 +6,7 @@ class GameCamera;
 class Player;
 class UI;
 class Pengin;
+class NinjaPengin;
 class Game : public IGameObject
 {
 public:
@@ -25,6 +26,7 @@ private:
 	GameCamera* m_gameCamera;
 	UI* m_ui;
 	Pengin* m_pengin;
+	NinjaPengin* m_ninjaPengin;
 	int m_skyCubeType = enSkyCubeType_Day;
 	
 };
